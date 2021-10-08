@@ -1,2 +1,4 @@
 black
-solcx
+python-dotenv
+py-solc-x
+web3
