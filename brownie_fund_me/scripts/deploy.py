@@ -12,6 +12,7 @@ def deploy_fund_me():
         price_feed_address = config["networks"][network.show_active()]["eth_usd_price_feed"]
     else:
         deploy_mocks()
+        price_feed_address = MockV3Aggregator[-1].address
     # ValueError: Explorer API not set for this network
     # Terminating local RPC client...
     # means that we are trying to verify a transaction on a network which doesn't offer this option
