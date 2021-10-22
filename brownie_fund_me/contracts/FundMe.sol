@@ -45,6 +45,13 @@ contract FundMe {
         require(msg.sender == owner);
         _;
     }
+
+    function getEntranceFee() public view returns (uint256) {
+        uint256 minimumUSD = 50 * 10**10;
+        uint256 price = getPrice();
+        uint256 precision = 1 * 10**18;
+        return (minimumUSD * precision) / price;
+    }
     
     function withdraw() payable onlyOwner public {
         msg.sender.transfer(address(this).balance);
