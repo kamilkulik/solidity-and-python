@@ -8,6 +8,8 @@ dotenv: .env
 networks:
   development:
     verify: False
+  ganache-local:
+    verify: False
   kovan: ''
   mainnet: ''
   rinkeby:
